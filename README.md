@@ -6,7 +6,9 @@
 
 ## Usage
 Each of the following commands should be run from the ```src/``` directory of the project. Run the following command in your terminal to move there:
-```cd src```
+```
+cd src
+```
 
 ### Task 1
 To run the task 1, run the following command:
@@ -16,12 +18,17 @@ Wait for the program to finish running. The output will be saved in the ```outpu
 
 ### Task 2
 To run the task 2, run the following command:
-```python task2.py```
+
+```
+python task2.py
+```
 
 Wait for the program to finish running. The output will be saved in the ```output/task2/``` directory. After the image is displayed, press ```Enter```on your keyboard to move further.
 
 You can also run the analysis part of the task 2 by running the following command:
-```python task2_analysis.py```
+```
+python task2_analysis.py
+```
 The output plot will be saved in the ```output/task2/``` directory under the name ```plot.png```.
 
 #### Analysis
