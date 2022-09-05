@@ -3,9 +3,12 @@ import numpy as np
 def dnorm(x, mu, sd):
     return 1 / (np.sqrt(2 * np.pi) * sd) * np.e ** (-np.power((x - mu) / sd, 2) / 2)
  
-def median_filter(kernel_size):
-    kernel = np.ones((kernel_size, kernel_size))
-    pass
+def median_filter(data):
+    kernel = data
+    kernel_size = kernel.shape[0]
+    kernel = np.sort(kernel, axis=None)
+    new_kernel = np.reshape(kernel, (kernel_size, kernel_size))
+    return new_kernel
 
 def gaussian_filter(kernel_size, sigma=1):
     kernel_1D = np.linspace(-(kernel_size // 2), kernel_size // 2, kernel_size)
@@ -21,7 +24,7 @@ def mean_filter(kernel_size):
     kernel = kernel / (kernel_size**2)
     return kernel
 
-def convolution(image, kernel):
+def convolution(image, kernel, useMedianKernel=False):
     image_row, image_col = image.shape[0], image.shape[1]
     kernel_row, kernel_col = kernel.shape
     
@@ -39,7 +42,12 @@ def convolution(image, kernel):
     for row in range(image_row):
         for col in range(image_col):
             for channel in range(output.shape[2]):
-                output[row, col, channel] = np.sum(padded_image[row:row + kernel_row, col:col + kernel_col, channel] * kernel[:, :, channel])
+                if useMedianKernel:
+                    kernel = median_filter(padded_image[row:row + kernel_row, col:col + kernel_col, channel])
+                    kernel = np.dstack([kernel]*3)
+                    output[row, col, channel] = kernel[kernel_row // 2, kernel_col // 2, channel]
+                else:
+                    output[row, col, channel] = np.sum(padded_image[row:row + kernel_row, col:col + kernel_col, channel] * kernel[:, :, channel])
             output[row, col, :] /= kernel_row * kernel_col
  
     return output
