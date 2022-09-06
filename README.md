@@ -12,7 +12,9 @@ cd src
 
 ### Task 1
 To run the task 1, run the following command:
-```python task1.py```
+```
+python task1.py
+```
 
 Wait for the program to finish running. The output will be saved in the ```output/task1/``` directory. After the image is displayed, press ```Enter```on your keyboard to move further.
 
@@ -40,6 +42,7 @@ The output plot will be saved in the ```output/task2/``` directory under the nam
 
 ##### Kernel size vs. Computation Time
 ![plot](output/task2/plot.png)
+
 With an increase in the kernel/filter size, the time to complete a convolution increases. This is because the convolution operation is performed on a larger number of pixels.
 
 The analysis was performed on ```gb_image1.jpg``` and tested with ```mean filter```. The results are shown in the plot above.

@@ -1,7 +1,7 @@
 import os
 import cv2
 import numpy as np
-from functions import gaussian_filter, mean_filter, median_filter, convolution
+from functions import gaussian_filter, mean_filter, convolution
 
 path = '../data/task2/'
 dir_list = os.listdir(path)
