@@ -3,6 +3,20 @@
 #### Email: alk224@lehigh.edu
 
 ## Installation
+1. Create an environment from ```environment.yml``` file:
+```
+conda env create -f environment.yml
+```
+
+2. Activate the environment:
+```
+conda activate cse398_alk224
+```
+
+3. Verify that the environment was installed correctly:
+```
+conda env list
+```
 
 ## Usage
 Each of the following commands should be run from the ```src/``` directory of the project. Run the following command in your terminal to move there:
@@ -48,7 +62,13 @@ With an increase in the kernel/filter size, the time to complete a convolution i
 The analysis was performed on ```gb_image1.jpg``` and tested with ```mean filter```. The results are shown in the plot above.
 
 ### Task 3
+To run the task 3, run the following command:
 
+```
+python task3.py
+```
+
+Wait for the program to finish running. The output will be saved in the ```output/task3/``` directory. After the image is displayed, press ```Enter```on your keyboard to move further.
 
 ### References
 - [1] http://www.adeveloperdiary.com/data-science/computer-vision/applying-gaussian-smoothing-to-an-image-using-python-from-scratch/
