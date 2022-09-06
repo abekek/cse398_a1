@@ -32,6 +32,8 @@ python task1.py
 
 Wait for the program to finish running. The output will be saved in the ```output/task1/``` directory. After the image is displayed, press ```Enter```on your keyboard to move further.
 
+**Note**: I added a third image to the dataset, to be sure that the program works correctly on a blurred image.
+
 ### Task 2
 To run the task 2, run the following command:
 
